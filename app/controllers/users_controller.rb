@@ -8,24 +8,33 @@ class UsersController < ApplicationController
 
     def show
         @reviews = Review.all
+        @review = Review.new
     end
 
     def new
         @user = User.new
+        @workspaces = Workspace.all
         
     end
 
     def create
         @user = User.create(user_params)
+        if @user.valid? 
         redirect_to @user
+        else
+            flash[:errors]=@user.errors.full_messages
+            redirect_to new_user_path
+        end
     end
 
     def edit
+        @workspaces = Workspace.all
     end
 
     def update
         @user = User.update(user_params)
-        redirect_to @user
+       redirect_to user_path(@user)
+    
     end
 
     def destroy
@@ -37,7 +46,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :age, :title, :workspace_id, :email, :password, :confirmation_password)
+        params.require(:user).permit(:name, :age, :title, :email,:workspace_id, :password, :confirmation_password)
 
     end
 

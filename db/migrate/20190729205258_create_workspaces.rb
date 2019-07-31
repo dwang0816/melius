@@ -3,6 +3,7 @@ class CreateWorkspaces < ActiveRecord::Migration[5.2]
     create_table :workspaces do |t|
       t.string :name
       t.string :location
+      t.string :password_digest
 
       t.timestamps
     end

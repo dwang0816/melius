@@ -1,0 +1,2 @@
+class WorkspaceLoginController < ApplicationController
+end
