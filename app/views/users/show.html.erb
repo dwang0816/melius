@@ -1,0 +1,58 @@
+<h1><%= Melius %></h1>
+
+
+<p> 
+    <strong>Name:</strong><%= @user.name %> 
+</p>
+
+<% rating = [] %>
+<% @user.reviews.each do |rev| %>
+    <% rating << rev.rating %>
+<% end %>
+
+<% average_rating = rating.sum / rating.size.to_f %>
+<p> 
+    <strong>Rating:</strong><br><%= '%.2f' % average_rating %> 
+</p>
+
+<p>
+    <strong>Company:</strong> <%= @user.workspace.name %>: <%= @user.title %>
+</p>
+
+<p>
+    <strong>Age:</strong><%= @user.age %>
+</p>
+
+
+
+<%= link_to "Edit", edit_user_path(@user) %>
+
+
+
+
+
+<h3>Leave a Rating</h3>
+<%= form_for @review do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %><br>
+    
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment, rows: 12, cols: 64 %>
+
+    <%= f.submit %>
+
+<% end %>
+
+<h2>Reviews</h2>
+
+<ul>
+<% @reviews.each do |rev| %>
+    <li>
+        <%= rev.rating %>
+        <%= rev.comment %>
+    </li>
+<% end %>
+</ul>
+

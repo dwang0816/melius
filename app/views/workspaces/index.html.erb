@@ -1,0 +1,9 @@
+<h1><center>Melius</center></h1>
+
+<ul>
+    <% @workspaces.each do |f| %>
+        <li>
+        <%= link_to f.name, f %>
+        </li>
+    <% end %>
+</ul>

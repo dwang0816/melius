@@ -1,10 +1,15 @@
 class WorkspacesController < ApplicationController
     before_action :find_workspace, only: [:show, :edit, :update, :destroy]
+  
 
     def index
+
+        @workspaces = Workspace.all
     end
 
     def show
+        @users = User.all
+        @reviews = Review.all
     end
 
     def new
@@ -33,4 +38,6 @@ class WorkspacesController < ApplicationController
     def find_workspace
         @workspace = Workspace.find(params[:id])
     end
+
+
 end

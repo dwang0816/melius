@@ -27,8 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_205258) do
     t.string "title"
     t.integer "workspace_id"
     t.string "email"
-    t.string "password"
-    t.string "confirmation_password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workspace_id"], name: "index_users_on_workspace_id"
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_205258) do
   create_table "workspaces", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
