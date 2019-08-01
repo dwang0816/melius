@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(review_params)
-        redirect_to ##############
+        
+        redirect_to user_path(@review.user_id)
         
     end
 
@@ -24,7 +25,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:user_id, :rating, :comment)
+        params.require(:review).permit(:user_id, :reviewer_name, :rating, :comment)
     end
 
     def find_review
