@@ -5,15 +5,16 @@
     <strong>Name:</strong><%= @user.name %> 
 </p>
 
-
-<% @rating = [] %>
  <% @user.reviews.each do |rev| %>
     <% @rating << rev.rating %>
 <% end %>
 
 <% average_rating = @rating.sum / @rating.size.to_f %>
+<% @average = '%.2f' % average_rating %>
+<% @user.user_rating = @average %>
+<% @user.save %>
 <p> 
-    <strong>Rating:</strong><br><%= '%.2f' % average_rating %> 
+    <strong>Rating:</strong><br><%= @user.user_rating %> 
 </p> 
 
 

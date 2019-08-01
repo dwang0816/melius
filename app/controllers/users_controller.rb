@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @reviews = Review.all
         @review = Review.new
         @user_show = User.all.find(params[:id])
-        @rating = @user.user_rating
+        @rating = []
     end
 
     def new

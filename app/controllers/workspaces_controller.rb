@@ -9,7 +9,7 @@ class WorkspacesController < ApplicationController
     def show
         @users = User.all
         @reviews = Review.all
-
+        @rating = []
     
     end
 
