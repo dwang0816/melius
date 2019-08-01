@@ -26,6 +26,7 @@ body {
     /* background-repeat: no-repeat; */
     /* background-position: center; */
     background-attachment: fixed;
+    background-size: cover;
 
 
     
@@ -59,8 +60,47 @@ h1 {
 
 
 #ratione {
- background-color: #c44;
+ background-color: rgb(29, 161, 223);
  left: 186px;
  text-align: left;
  width: 684px;
+}
+
+.title {
+    background-color: black;
+    height: 7em;
+    /* margin:  */
+    border: 1px solid black;
+    font-family: 'lobster', cursive;
+    font-size: 1.5em;
+    width: 23.85%;
+
+}
+
+.login_title{
+    font-family: 'lobster', cursive;
+    font-size: 4em;
+    text-align: center; 
+    text-shadow: 2px 2px rgb(70, 68, 68);
+    color: white;
+    
+    
+}
+
+.userblock {
+    background-color: rgba(191, 194, 197, 0.5);
+    /* left: 3em; */
+    width: 370px;
+    padding: 1em;
+    left: 150px;
+}
+
+.review {
+    background-color: rgba(191, 194,197, 0.5);
+    left: 150px;
+    width: 406px;
+}
+
+.login_form {
+    text-align: center;
 }
