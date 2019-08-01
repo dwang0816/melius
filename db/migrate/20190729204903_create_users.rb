@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.belongs_to :workspace, foreign_key: true
       t.string :email
       t.string :password_digest
+      t.integer :user_rating
 
       t.timestamps
     end

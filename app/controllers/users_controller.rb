@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     def show
         @reviews = Review.all
         @review = Review.new
+        @user_show = User.all.find(params[:id])
     end
 
     def new
@@ -19,13 +20,14 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        if @user.valid? 
-        redirect_to @user
+        if @user.valid?
+          session[:user_id] = @user.id
+          redirect_to @user
         else
-            flash[:errors]=@user.errors.full_messages
-            redirect_to new_user_path
+          flash[:errors] = @user.errors.full_messages
+          redirect_to new_user_path
         end
-    end
+      end
 
     def edit
         @workspaces = Workspace.all
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :age, :title, :email,:workspace_id, :password, :confirmation_password)
+        params.require(:user).permit(:name, :age, :title, :email,:workspace_id, :password, :confirmation_password, :user_rating)
 
     end
 
