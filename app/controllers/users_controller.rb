@@ -19,11 +19,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
-        if @user.valid?
+        @user = User.new(user_params)
+        if @user.valid? && params[:user][:password] == params[:user][:password_confirmation]
+          @user.create  
           session[:user_id] = @user.id
           redirect_to @user
+        elsif @user.valid? && !(params[:user][:password] == params[:user][:password_confirmation])
+            flash[:errors] = ["Password don't match."]
+            redirect_to new_user_path
         else
+            byebug
           flash[:errors] = @user.errors.full_messages
           redirect_to new_user_path
         end
@@ -48,7 +53,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :age, :title, :email,:workspace_id, :password, :confirmation_password, :user_rating)
+        params.require(:user).permit(:name, :age, :title, :email,:workspace_id, :password, :user_rating)
 
     end
 
