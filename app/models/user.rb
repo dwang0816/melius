@@ -4,6 +4,6 @@ class User < ApplicationRecord
 
     
     belongs_to :workspace
-    has_many :reviews 
+    has_many :reviews
 
 end

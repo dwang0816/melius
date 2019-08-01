@@ -19,18 +19,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        if @user.valid? && params[:user][:password] == params[:user][:password_confirmation]
-          @user.create  
+        @user = User.create(user_params)
+        if @user.valid? && params[:user][:password] == params[:user][:password_confirmation]  
           session[:user_id] = @user.id
-          redirect_to @user
+          redirect_to new_login_path
         elsif @user.valid? && !(params[:user][:password] == params[:user][:password_confirmation])
             flash[:errors] = ["Password don't match."]
             redirect_to new_user_path
         else
-            byebug
-          flash[:errors] = @user.errors.full_messages
-          redirect_to new_user_path
+            flash[:errors] = @user.errors.full_messages
+            redirect_to new_user_path
         end
       end
 
