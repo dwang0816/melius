@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_205258) do
+ActiveRecord::Schema.define(version: 2019_08_01_012828) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "coworker_id"
+    t.string "create"
+    t.string "destroy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
@@ -28,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_205258) do
     t.integer "workspace_id"
     t.string "email"
     t.string "password_digest"
+    t.integer "user_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workspace_id"], name: "index_users_on_workspace_id"
