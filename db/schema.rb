@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_205258) do
     t.integer "workspace_id"
     t.string "email"
     t.string "password_digest"
-    t.integer "user_rating"
+    t.decimal "user_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workspace_id"], name: "index_users_on_workspace_id"

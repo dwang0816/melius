@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
       def logout
         session[:user_id] = nil
       end
+
+      def average_user_rating
+        
+      end
     
 end
     
