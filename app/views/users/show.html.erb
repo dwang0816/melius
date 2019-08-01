@@ -6,18 +6,16 @@
 </p>
 
 
-<%
-=begin%>
+<% @rating = [] %>
  <% @user.reviews.each do |rev| %>
-    <% @user.user_rating << rev.rating %>
+    <% @rating << rev.rating %>
 <% end %>
 
-<% average_rating = @user_rating.sum / @user.user_rating.size.to_f %>
+<% average_rating = @rating.sum / @rating.size.to_f %>
 <p> 
     <strong>Rating:</strong><br><%= '%.2f' % average_rating %> 
 </p> 
-<%
-=end%>
+
 
 <p>
     <strong>Company:</strong> <%= @user.workspace.name %>: <%= @user.title %>
@@ -38,10 +36,11 @@
 <h3>Leave a Rating</h3>
 <%= form_for @review do |f| %>
 
-    <%= f.hidden_text_field :user_id, value: @user.id %>
+    <%= f.hidden_field :user_id, value: @user.id %>
     
-    <%= f.label :reviewer_name %>
-    <%= f.text_field :reviewer_name, value: @current_user.name %>
+
+ <%= f.hidden_field :reviewer_name, value: @current_user.name %> 
+
 
     <%= f.label :rating %><br>
     <%= f.number_field :rating %><br>
@@ -58,8 +57,8 @@
 <ul>
 <% @user.reviews.each do |rev| %>
     <li>
-        <%= rev.reviewer_name %>
-        <%= rev.rating %>
+        <%= rev.reviewer_name %> -
+        <%= rev.rating %>:
         <%= rev.comment %>
     </li>
 <% end %>

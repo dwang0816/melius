@@ -2,7 +2,9 @@
 
 <p>Location: <%= @workspace.location %></p>
 
-<% @rating = [] %>
+<%
+=begin%>
+ <% @rating = [] %>
 
 <% @workspace.users.each do |user| %>
     <% user.reviews.each do |rev| %>
@@ -16,7 +18,9 @@
             <%= user.name %> - <strong>Rating:</strong><br><%= '%.2f' % @average_rating %> 
         </li>
     <% end %>
-</ul>
+</ul> 
+<%
+=end%>
 
 <%= link_to "Edit", edit_workspace_path(@workspace)%>
 <%= button_to "Delete This Workspace", workspace_path(@workspace), method: :delete %>
