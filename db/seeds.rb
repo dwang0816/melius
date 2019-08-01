@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Workspace.create(name: "Flatiron", location: "Dumbo", password: "password")
-Workspace.create(name: "Tigerlilly", location: "Dumbo", password: "password")
+Workspace.create(name: "Flatiron", location: "Dumbo", password: "flatiron")
+Workspace.create(name: "Tigerlilly", location: "Dumbo", password: "tigerlilly")
 
 
 Review.create(user_id: 1, rating: 3, comment: "Great listener")

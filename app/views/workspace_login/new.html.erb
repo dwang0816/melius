@@ -1,8 +1,16 @@
 <h1>Login</h1>
 <div class="login">
-    <%= form_for @workspace do |f| %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= f.submit "Login" %>
+    <%= form_tag "/workspace_login" do  %>
+
+      <%= hidden_field_tag "workspace", @workspace.id %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Login" %>
     <% end %>
 </div>
+
+
+<% if flash["message"]%>
+<%= flash["message"]%>
+<% end %>

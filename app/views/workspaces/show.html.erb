@@ -2,21 +2,7 @@
 
 <p>Location: <%= @workspace.location %></p>
 
-<% @rating = [] %>
 
-<% @workspace.users.each do |user| %>
-    <% user.reviews.each do |rev| %>
-        <% @rating << rev.rating %>
-        <% @average_rating = @rating.sum / @rating.size.to_f %>
-    <% end %>
-<% end %>
-<ul>
-    <% @workspace.users.each do |user| %>
-        <li>
-            <%= user.name %> - <strong>Rating:</strong><br><%= '%.2f' % @average_rating %> 
-        </li>
-    <% end %>
-</ul>
 
 <%= link_to "Edit", edit_workspace_path(@workspace)%>
 <%= button_to "Delete This Workspace", workspace_path(@workspace), method: :delete %>
