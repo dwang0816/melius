@@ -1,6 +1,14 @@
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+</style>
+</head>
+
+<div class="title">
 <h1><%= Melius %></h1>
+</div>
 
-
+<div class="userblock">
 <p> 
     <strong>Name:</strong><%= @user.name %> 
 </p>
@@ -28,7 +36,7 @@
 
 
 <%= link_to "Edit", edit_user_path(@user) %>
-
+</div>
 
 
 
@@ -50,10 +58,10 @@
     <%= f.label :comment %><br>
     <%= f.text_area :comment, rows: 12, cols: 64 %>
 
-    <%= f.submit %>
+    <br><%= f.submit %>
 
 <% end %>
-
+<div class="review">
 <h2>Reviews</h2>
 
 <ul>
@@ -66,4 +74,5 @@
     </li>
 <% end %>
 </ul>
+</div>
 
