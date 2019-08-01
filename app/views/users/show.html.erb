@@ -36,10 +36,12 @@
 <h3>Leave a Rating</h3>
 <%= form_for @review do |f| %>
 
+
     <%= f.hidden_field :user_id, value: @user.id %>
     
 
  <%= f.hidden_field :reviewer_name, value: @current_user.name %> 
+
 
 
     <%= f.label :rating %><br>
@@ -57,6 +59,7 @@
 <ul>
 <% @user.reviews.each do |rev| %>
     <li>
+
         <%= rev.reviewer_name %> -
         <%= rev.rating %>:
         <%= rev.comment %>
