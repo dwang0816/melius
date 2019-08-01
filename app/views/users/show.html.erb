@@ -40,6 +40,9 @@
 
     <%= f.hidden_text_field :user_id, value: @user.id %>
     
+    <%= f.label :reviewer_name %>
+    <%= f.text_field :reviewer_name, value: @current_user.name %>
+
     <%= f.label :rating %><br>
     <%= f.number_field :rating %><br>
     
@@ -55,6 +58,7 @@
 <ul>
 <% @user.reviews.each do |rev| %>
     <li>
+        <%= rev.reviewer_name %>
         <%= rev.rating %>
         <%= rev.comment %>
     </li>
