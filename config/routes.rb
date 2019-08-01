@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :ratings
   resources :login, only: [:new, :create]
+  resources :workspace_login, only: [:new, :create]
   resources :workspaces
   resources :reviews
   resources :users

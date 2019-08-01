@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
             flash[:notice] = "Successfully Posted Rating!"
             redirect_to root_url
         else
-            flash[:error] = "Unable to Post Rating!"
+            flash[:errors] = "Unable to Post Rating!"
 
             render action: :new
         end
