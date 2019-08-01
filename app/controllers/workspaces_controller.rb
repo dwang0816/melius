@@ -3,28 +3,37 @@ class WorkspacesController < ApplicationController
   
 
     def index
-
         @workspaces = Workspace.all
     end
 
     def show
         @users = User.all
         @reviews = Review.all
+
+    
     end
 
     def new
+        @workspace = Workplace.new
+
     end
 
     def create
+        @workspace = Workspace.create(workspace_params)
+        redirect_to workspace_path(@workspace)
     end
 
     def edit
     end
 
     def update
+        @workspace = Workspace.update(workspace_params)
+        redirect_to workspace_path 
     end
 
     def destroy
+        @workspace.destroy
+        redirect_to workspaces_path
     end
 
 
