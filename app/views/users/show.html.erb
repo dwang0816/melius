@@ -37,6 +37,8 @@
 
 <h3>Leave a Rating</h3>
 <%= form_for @review do |f| %>
+
+    <%= f.hidden_text_field :user_id, value: @user.id %>
     
     <%= f.label :rating %><br>
     <%= f.number_field :rating %><br>

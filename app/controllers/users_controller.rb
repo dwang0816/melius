@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid? && params[:user][:password] == params[:user][:password_confirmation]  
           session[:user_id] = @user.id
-          redirect_to workspaces_path
+          redirect_to new_login_path
         elsif @user.valid? && !(params[:user][:password] == params[:user][:password_confirmation])
             flash[:errors] = ["Password don't match."]
             redirect_to new_user_path

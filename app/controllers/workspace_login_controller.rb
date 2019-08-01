@@ -1,20 +1,26 @@
 class WorkspaceLoginController < ApplicationController
 
     def new
-        @id = params[:workspace]
-        @workspace = Workspace.find(@id)
+        @workspace = Workspace.find(params[:workspace])
     end
 
     def create
-        @id = params[:workspace]
-        @workspace = Workspace.find(@id)
-        if @workspace && @workspace.authenticate(params[:password])
-          flash["message"] = "Successfully logged in #{@workspace.name}!"
-          session[:workspace_id] = @workspace.id
-          redirect_to workspace_path(@workspace)
-        else
-          flash["message"] = "Incorrect Password"
-          redirect_to workspace_login_path(@workspace)
+        @workspace = Workspace.find(params[:workspace])
+        if @workspace && @workspace.authenticate(params[:password])   
+            redirect_to workspace_path(@workspace)  
+        else 
+            flash["message"] = "Incorrect Password"
+            redirect_to "/workspace_login/new?workspace=#{@workspace.id}"
         end
-      end
+        
+    end
+
+
+    #   @user = User.find_by(email: params[:email])
+    #   if @user && @user.authenticate(params[:password])
+    #     session[:user_id] = @user.id
+    #     redirect_to workspaces_path
+    #   else
+    #     flash["message"] = "Incorrect Email or Password" 
+    #   end
 end

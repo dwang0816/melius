@@ -19,7 +19,7 @@ class LoginController < ApplicationController
       session[:user_id] = @user.id
       redirect_to workspaces_path
     else
-      flash["message"] = "Incorrect Email or Password"
+      flash["message"] = "Incorrect Email or Password"   ####error message not showing
       redirect_to new_login_path
     end
   end
