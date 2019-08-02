@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    include Gravtastic
+    gravtastic
+
     has_secure_password
     validates_uniqueness_of :email
 

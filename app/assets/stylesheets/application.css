@@ -47,6 +47,9 @@ h1 {
     width: 100%;
     text-align: center;
     text-shadow: 2px 2px rgb(70, 68, 68);
+    padding-top: 25px;
+    position: fixed;
+    bottom: 200px;
 
 }
 
@@ -77,13 +80,34 @@ h1 {
 
 .title {
     background-color: black;
-    height: 7em;
+    height: 10.5em;
     /* margin:  */
-    border: 1px solid black;
+    border: 10px solid black;
     font-family: 'lobster', cursive;
-    font-size: 1.5em;
+    font-size: .75em;
     width: 23.85%;
+    text-shadow: 2px 2px rgb(70, 68, 68);
 
+}
+
+.melius {
+    font-family: 'lobster', cursive;
+    font-size: 6em;
+    text-align: center; 
+    /* text-shadow: 2px 2px rgb(70, 68, 68); */
+    color: white;
+    /* padding: 24px; */
+    position: fixed;
+    top: 70px;
+    right: 585px;
+    border-bottom: 2px solid white; 
+    border-left: 2px solid white;
+    /* border-right: 2px solid white; */
+    border-top: 2px solid white;
+    border-bottom-width: 2px;
+    width: 2em;
+    height: 1.35em;
+    margin: 0 auto;
 }
 
 .login_title{
@@ -92,11 +116,18 @@ h1 {
     text-align: center; 
     /* text-shadow: 2px 2px rgb(70, 68, 68); */
     color: white;
-    padding: 14px;
-    padding-top: 120px;
+    /* padding: 24px; */
+    position: fixed;
+    top: 70px;
+    right: 585px;
     border-bottom: 2px solid white; 
-    
-    
+    border-left: 2px solid white;
+    /* border-right: 2px solid white; */
+    border-top: 2px solid white;
+    border-bottom-width: 2px;
+    width: 2em;
+    height: 1.35em;
+    margin: 0 auto;
 }
 
 .userblock {
@@ -109,8 +140,12 @@ h1 {
 
 .review {
     background-color: rgba(191, 194,197, 0.5);
-    left: 150px;
-    width: 406px;
+    /* left: 150px; */
+    width: 800px;
+    position: fixed;
+    top: 250px;
+    right: 100px;
+    text-indent: 50px;
 }
 
 .login_form {
@@ -135,4 +170,5 @@ h1 {
     display: inline-block;
     padding: 14px;
 }
+
 

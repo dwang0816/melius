@@ -4,14 +4,30 @@
 </style>
 </head>
 
+ <% @user.reviews.each do |rev| %>
+    <% @rating << rev.rating %>
+<% end %>
+
+<% average_rating = @rating.sum / @rating.size.to_f %>
+<% @average = '%.2f' % average_rating %>
+<% @user.user_rating = @average %>
+<% @user.save %>
+
+
 <div class="title">
-<h1><%= Melius %></h1>
+<h1><%= @user.name %> - <%= @user.user_rating %></h1>
+</div>
+
+<div class="melius">
+<%= Melius %>
 </div>
 
 <div class="userblock">
-<p> 
-    <strong>Name:</strong><%= @user.name %> 
-</p>
+
+<div class="gravatar">
+<%= gravatar_for @user %>
+</div>
+
 
  <% @user.reviews.each do |rev| %>
     <% @rating << rev.rating %>
@@ -21,9 +37,7 @@
 <% @average = '%.2f' % average_rating %>
 <% @user.user_rating = @average %>
 <% @user.save %>
-<p> 
-    <strong>Rating:</strong><br><%= @user.user_rating %> 
-</p> 
+
 
 
 <p>
@@ -74,17 +88,17 @@
 
 
 <div class="review">
-<h2>Reviews</h2>
+<h2>Reviews:</h2>
 
-<ul>
+
 <% @user.reviews.each do |rev| %>
-    <li>
+    <p>
 
         <%= rev.reviewer_name %> -
         <%= rev.rating %>:
         <%= rev.comment %>
-    </li>
+    </p>
 <% end %>
-</ul>
+
 </div>
 
