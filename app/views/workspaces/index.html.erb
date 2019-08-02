@@ -1,14 +1,15 @@
-<h1><center>Meliius</center></h1>
+<h1><center>Melius</center></h1>
 
 <ul>
     <% @workspaces.each do |f| %>
-        <li>
+        <center>
         <%# <%= link_to f.name, new_workspace_login_path(:foo => "bar", :baz => "quux") %>
 
        <form method="get" action="/workspace_login/new">
             <input type="hidden" name="workspace" value=<%=f.id%>>
              <input type="submit" value=<%= f.name %> >
         </form>
-        </li>
+        </center>
+        
     <% end %>
 </ul>
