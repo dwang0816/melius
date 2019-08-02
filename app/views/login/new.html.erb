@@ -9,13 +9,44 @@
 <%= Melius %>
 </div>
 
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+</style>
+
 
 <div class="login">
     <%= form_tag "/login" do %>
       <div class="login_form">
         <%= label_tag :email %>
         <%= email_field_tag :email %>
-        <br><%= label_tag :password %>
+        <%= label_tag :password %>
         <%= password_field_tag :password %>
       </div>
           <div class="login_button">

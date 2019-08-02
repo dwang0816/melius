@@ -26,13 +26,27 @@ body {
     background-size: 100%;
     /* background-repeat: no-repeat; */
     /* background-position: center; */
-    background-attachment: fixed;
-    background-size: cover;
     
 
 
     
 }
+
+.melius {
+    color: white;
+    font-size: 3em;
+    /* text-align */
+    font-family: 'lobster', cursive;
+    
+}
+
+.workspacesindex {
+    margin: auto 0;
+    text-align: center;
+    font-size: 4em;
+
+}
+
 
 h1 {
     color: #FFF;
@@ -116,6 +130,7 @@ h1 {
     text-align: center; 
     /* text-shadow: 2px 2px rgb(70, 68, 68); */
     color: white;
+
     /* padding: 24px; */
     position: fixed;
     top: 70px;
@@ -128,6 +143,7 @@ h1 {
     width: 2em;
     height: 1.35em;
     margin: 0 auto;
+
 }
 
 .userblock {
