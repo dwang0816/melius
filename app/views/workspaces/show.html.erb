@@ -6,13 +6,16 @@
 <ul>
     <% @workspace.users.each do |user| %>
         <li>
-            <%= user.name %> - <%= user.title %> - <%= user.user_rating %>
+            <%= link_to user.name, user %> - <%= user.title %> - <%= user.user_rating %>
         </li>
     <% end %>
 
-    
 
-        <p><%= link_to "Edit", edit_workspace_path(@workspace)%></p>
+ 
+
+<% if @current_user.title == "Boss" %>
+<%= link_to "Edit", edit_workspace_path(@workspace)%>
+<% end %>
 </div>
 
 
