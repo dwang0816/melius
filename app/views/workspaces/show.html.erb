@@ -1,7 +1,6 @@
 <h1 id="ratione"> <%= @workspace.name %> </h1>
-
+<div class="blockdisplay">
 <p>Location: <%= @workspace.location %></p>
-
 
 
 <ul>
@@ -12,10 +11,9 @@
     <% end %>
 
     
- 
 
-
-<%= link_to "Edit", edit_workspace_path(@workspace)%>
+        <p><%= link_to "Edit", edit_workspace_path(@workspace)%></p>
+</div>
 
 
         
