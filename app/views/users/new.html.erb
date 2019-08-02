@@ -1,5 +1,5 @@
-<div class="newuser">
-<h1> Sign Up </h1>
+
+
 
 <% if flash[:errors] %>
  <ul>
@@ -10,34 +10,83 @@
    <% end %>
  </ul>
 <% end %>
+<div class="newuser">
+
+
+
+<html>
+<style>
+ input, select {
+  width: 100%;
+  height: 3em;
+  /* padding: 12px 20px; */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 2em;
+}
+
+form {
+  width: 50vw;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+  text-align: -webkit-center
+}
+</style>
+<div>
 <%= form_for @user do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%><br>
 
 
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age %><br>
 
 
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br>
 
     <%= f.label :workspace_id %>
-    <%= f.collection_select(:workspace_id, @workspaces, :id, :name) %>
+    <%= f.collection_select(:workspace_id, @workspaces, :id, :name) %><br>
 
     <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email %><br>
 
     
 
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br>
 
 
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br>
 
 
     <%= f.submit "Sign-Up!" %>
 <% end %>
 </div>
+
+
