@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
       def authorized
         if !@logged_in
-          return redirect_to colors_path
+          return redirect_to new_login_path
         end
       end
     
