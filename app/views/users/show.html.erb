@@ -27,7 +27,7 @@
 
 
 <p>
-    <strong>Company:</strong> <%= @user.workspace.name %>: <%= @user.title %>
+    <strong>Company:</strong> <%= link_to @user.workspace.name, workspace_path(@user.workspace_id) %>: <%= @user.title %>
 </p>
 
 <p>
@@ -35,13 +35,20 @@
 </p>
 
 
-
+<% if @current_user.id == @user.id %>
 <%= link_to "Edit", edit_user_path(@user) %>
+<% end %>
+
+<% if @current_user.id == @user.id %>
+        <%= button_to "Logout", "/logout", method: :delete %>
+      <% end %>
+
+
 </div>
 
 
 
-
+<% if @current_user.workspace_id == @user.workspace_id %>
 <h3>Leave a Rating</h3>
 <%= form_for @review do |f| %>
 
@@ -62,6 +69,10 @@
     <br><%= f.submit %>
 
 <% end %>
+
+<% end %>
+
+
 <div class="review">
 <h2>Reviews</h2>
 
