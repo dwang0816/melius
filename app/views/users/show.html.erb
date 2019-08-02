@@ -15,7 +15,11 @@
 
 
 <div class="title">
-<h1><%= @user.name %> - <%= @user.user_rating %></h1>
+<h1><%= @user.name %></h1>
+</div>
+
+<div class="rating">
+    <h1> <%= @user.user_rating %></h1>
 </div>
 
 <div class="melius">
@@ -61,7 +65,7 @@
 </div>
 
 
-
+<div class="leaveRating">
 <% if @current_user.workspace_id == @user.workspace_id %>
 <h3>Leave a Rating</h3>
 <%= form_for @review do |f| %>
@@ -85,8 +89,7 @@
 <% end %>
 
 <% end %>
-
-
+</div>
 <div class="review">
 <h2>Reviews:</h2>
 
