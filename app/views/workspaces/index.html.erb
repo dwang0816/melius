@@ -1,15 +1,33 @@
-<h1><center>Melius</center></h1>
+<div class="melius"><center>
+Melius
+</center></div>
 
-<ul>
+<html>
+<style>
+input[type=submit] {
+  width: 20%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+</style>
+
+<div class="workspaceindex">
+<ul><center>
     <% @workspaces.each do |f| %>
-        <center>
         <%# <%= link_to f.name, new_workspace_login_path(:foo => "bar", :baz => "quux") %>
 
        <form method="get" action="/workspace_login/new">
             <input type="hidden" name="workspace" value=<%=f.id%>>
              <input type="submit" value=<%= f.name %> >
         </form>
-        </center>
         
     <% end %>
-</ul>
+</center></ul>
+</div>
+
+
