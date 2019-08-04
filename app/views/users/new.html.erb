@@ -84,6 +84,9 @@ div {
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %><br>
 
+    <%= f.label :image, "Upload Photo" %>
+    <%= f.file_field :image %>
+
 
     <%= f.submit "Sign-Up!" %>
 <% end %>

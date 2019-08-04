@@ -18,7 +18,7 @@ div {
 <ul>
     <% @workspace.users.each do |user| %>
             
-            <p><%= link_to user.name, user %> - <%= user.title %> - <%= user.user_rating %></p>
+            <p> <div class="gravatarThumb"><img src="<%= user.image.url %>" /></div>  <%= link_to user.name, user %> - <%= user.title %> - <%= user.user_rating %></p>
             
     <% end %>
 

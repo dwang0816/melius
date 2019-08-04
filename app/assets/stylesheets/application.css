@@ -44,6 +44,7 @@ body {
     margin: auto 0;
     text-align: center;
     font-size: 4em;
+    top: 200px;
 
 }
 
@@ -112,7 +113,7 @@ h1 {
     position: absolute;
     top: 360px;
     left: 170px;
-   
+    z-index: 1;
 
     
 }
@@ -147,7 +148,7 @@ h1 {
     /* padding: 24px; */
     position: fixed;
     top: 70px;
-    right: 750px;
+    right: 600px;
     border-bottom: 2px solid white; 
     border-left: 2px solid white;
     /* border-right: 2px solid white; */
@@ -157,6 +158,7 @@ h1 {
     height: 1.35em;
     margin: 0 auto;
     text-shadow: 2px 2px rgb(70, 68, 68);
+    /* text-align: -webkit-center; */
 
 }
 
@@ -201,10 +203,46 @@ h1 {
     padding: 14px;
 }
 
-.gravatar {
-    border-radius: 50%;
-}
+/* .gravatar {
+    border-radius: 70%;
+    width: 10em;
+    height: 10em;
+} */
 
-.leaveRating {
+
+.userImage {
+    /* width: 75%;
+  height: auto; */
     
 }
+
+.gravatar {
+    display: inline-block;
+    position: relative;
+    width: 360px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .gravatar img {
+    width: auto;
+    height: 100%;
+    margin-left: -70px;
+  }
+
+  .gravatarThumb {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .gravatarThumb img {
+    width: auto;
+    height: 160%;
+    margin-left: -60px;
+    margin-top: -40px;
+  }

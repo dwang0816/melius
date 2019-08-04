@@ -13,10 +13,12 @@ input[type=submit] {
   cursor: pointer;
   text-align: center;
 }
-
+.form {
+  padding: 200px;
+}
 </style>
 
-<div class="workspaceindex">
+<div class="form">
 <ul><center>
     <% @workspaces.each do |f| %>
         <%# <%= link_to f.name, new_workspace_login_path(:foo => "bar", :baz => "quux") %>
