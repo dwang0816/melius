@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password_digest
       t.decimal :user_rating
+      t.string :image
 
       t.timestamps
     end

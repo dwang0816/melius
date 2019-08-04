@@ -28,9 +28,19 @@
 
 <div class="userblock">
 
-<div class="gravatar">
-<%= gravatar_for @user %>
-</div>
+
+ <div class="gravatar">
+<img src="<%= @user.image.url %>" />
+</div> 
+
+
+<%
+=begin%>
+ <div class="userImage">
+<%= image_tag(@user.image.url, style:"height: 60%; width: 60%;") %>
+</div> 
+<%
+=end%>
 
 
  <% @user.reviews.each do |rev| %>
