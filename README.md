@@ -12,7 +12,7 @@ To run:
 ```
 rails s 
 ```
-and go to: 
+Go to: 
 ```
 http://localhost:3000
 ```
