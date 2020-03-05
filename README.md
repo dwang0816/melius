@@ -8,11 +8,11 @@ Made with Ruby on Rails, Bootstrap, Bcrypt and Faker gem.
 
 # Developers
 
-run - 
+To run:
 ```
 rails s 
 ```
-and go to 
+and go to: 
 ```
 http://localhost:3000
 ```
