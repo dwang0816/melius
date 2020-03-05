@@ -7,3 +7,5 @@ Made with Ruby on Rails, Bootstrap, Bcrypt and Faker gem.
 
 #Developers
 run - rails s and go to http://localhost:3000
+
+<img src="melius.jpg">
