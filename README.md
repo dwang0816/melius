@@ -1,24 +1,9 @@
-# README
+# Melius
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Melius is a rating web app for employers and employees similar to ratemyprofessor.com. It promotes work productivity by offering anonymous yet non-toxic reviews between coworkers.
 
-Things you may want to cover:
+#Code
+Made with Ruby on Rails, Bootstrap, Bcrypt and Faker gem.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Developers
+run - rails s and go to http://localhost:3000
